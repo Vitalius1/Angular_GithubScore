@@ -1,0 +1,11 @@
+<div id="form">
+  <h1>GitHub Score</h1>
+  <form #f="ngForm" (submit)="onSubmit(f)">
+    <label for="username">Github Username</label>
+    <input type="text" name="username" required [(ngModel)]='username'><br>
+    <button type="submit" [disabled]="f.invalid">Calculate my Github Score</button>
+  </form>
+</div>
+<div id="score">
+  <h1 *ngIf="user['followers']">Your Score: {{ user['followers'] + user['public_repos'] }}</h1>
+</div>
